@@ -1,0 +1,43 @@
+HTTP VIDEO STREAMING SERVER:
+
+HOW TO SETUP THE SERVER:
+
+STEP1:
+adding videos:
+>copy all the video in the project folder.
+>edit the video1.html file change the video name at the tag (target="<video name>").
+>save the html page using save as(File-->Save As) give it some other name like video2.html.
+>editing the index page of the browser.
+>open index.html page 
+  >copy the line <a href="http://192.168.1.14:9080/video1.html" >VIDEO 1</a>
+  >paste it below the same link and edit in the following way:
+
+     >edit <a href="http://192.168.1.14:9080/video2.html" >VIDEO 2</a>
+     >NOTE:here we have assumed that name of your new html page is video2.html
+>now save the file (index.html)
+>continue these step again for adding new video.
+STEP2:
+>goto the project folder using the terminal.
+  eg:"home/<user name>/project"
+>run make clean
+>run make
+  now you will see the object files created.
+STEP3:
+RUNNING THE SERVER:
+>type "cd obj" and then run the server code by typing "./server"
+>press enter
+>the server will run and the IP configured will be dispalyed on the console.
+STEP4:
+ON THE CLIENT SIDE
+>open mozilla firefox
+>type http://<IP ADDRESS>:9080
+>press enter
+>NOTE IP ADDRESS is the IP address atained by the server which will be visble when the server starts.
+>example:http://192.168.1.14:9080
+>now click on any link and you can view the video on the browser.
+
+
+FOR TRIAL:
+>we have place a video named bigbunny.ogg with an html page video1.html which contains the coresponding embedded player.
+>now just proceed from STEP2.
+>you will have the server running.

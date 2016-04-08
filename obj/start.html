@@ -1,0 +1,61 @@
+<html>
+<head><title>Miracle Technologies</title></head>
+
+<body bgcolor="seagreen">
+
+<h1> Video Streaming Server by Miracle Technologies </h1>
+<h2> <div style="margin-left:280px;">ENJOY </div></h2>
+<embed type="application/x-vlc-plugin"
+	id="vlcplayer"
+         name="video1"
+         autoplay="yes" loop="yes" width="640" height="480" fullscreen="yes"
+         target="Arijit Singh - Unplugged Season 3 - 'Tum Hi Ho' - YouTube[via torchbrowser.com].mp4" />
+
+<div id="controls">
+  <input type="button" onclick="play();" value="Play" />
+  <input type="button" onclick="pause();" value="Pause" />
+  <input type="button" onclick="stop();" value="Stop" />
+  <input type="button" onclick="mute();" value="Mute" />
+</div>
+
+<script type="text/javascript" language="javascript">
+	var vlc = document.getElementById("vlcplayer");
+	
+	function player(vid) {
+    try {
+    	var options = new Array(":aspect-ratio=16:10", "--rtsp-tcp", ":no-video-title-show");
+      var id = vlc.playlist.add(vid,'Video',options);
+      vlc.playlist.playItem(id);
+      vlc.video.fullscreen = true;
+      //vlc.video.toggleFullscreen();
+    }
+    catch (ex) {
+      alert(ex);
+    }
+	}
+	
+	function mute(){
+  	vlc.audio.toggleMute();
+  }
+  
+	function play(){
+  	vlc.playlist.play();
+  }
+  
+	function stop(){
+  	vlc.playlist.stop();
+  }
+  
+	function pause(){ 
+  	vlc.playlist.togglePause();
+  }	
+  
+  function fullscreen(){
+  	vlc.video.toggleFullscreen();
+  }
+  
+</script>
+
+
+</body>
+</html>
